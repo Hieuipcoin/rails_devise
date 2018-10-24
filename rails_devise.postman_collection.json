@@ -103,6 +103,45 @@
 				"description": "POST   /users/sign_in(.:format)      <===>                                                                devise/sessions#create"
 			},
 			"response": []
+		},
+		{
+			"name": "confirm token by email",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/users/confirmation?confirmation_token=WR1sVJJHwVBrDSfDuKsz",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"confirmation"
+					],
+					"query": [
+						{
+							"key": "confirmation_token",
+							"value": "WR1sVJJHwVBrDSfDuKsz"
+						}
+					]
+				},
+				"description": "/users/confirmation(.:format) <===> devise/confirmations#show"
+			},
+			"response": []
 		}
 	]
 }
