@@ -38,7 +38,7 @@ module Deviseapp
         :address    => 'smtp.gmail.com',
         :domain     => 'mail.google.com',
         :port       => 587,
-        :user_name  => 'hieult@ipcoin.com',
+        :user_name  => 'rikiipcoin@gmail.com',
         :password   => 'Hieu1987',
         :authentication => 'login',
         :enable_starttls_auto => true

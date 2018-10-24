@@ -10,3 +10,5 @@ commands:
 - psql
     + create database learning_authentications;
 - rails db:migrate
+- rake db:migrate VERSION=0
+- rake db:migrate
