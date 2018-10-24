@@ -31,5 +31,19 @@ module Deviseapp
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # I don't know, why put these codes here
+    # I do it because the tutorial guides me that
+    ActionMailer::Base.smtp_settings = {
+        :address    => 'smtp.gmail.com',
+        :domain     => 'mail.google.com',
+        :port       => 587,
+        :user_name  => 'hieult@ipcoin.com',
+        :password   => 'Hieu1987',
+        :authentication => 'login',
+        :enable_starttls_auto => true
+
+    }
+
   end
 end
