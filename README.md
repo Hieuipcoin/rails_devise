@@ -12,3 +12,9 @@ commands:
 - rails db:migrate
 - rake db:migrate VERSION=0
 - rake db:migrate
+
+
+**** use gem dotnv ****
+- bundle install
+- touch .env
+
