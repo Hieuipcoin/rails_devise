@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "sign_up",
+			"name": "devise sign_up",
 			"request": {
 				"method": "POST",
 				"header": [
@@ -14,11 +14,16 @@
 						"key": "Content-Type",
 						"value": "application/json",
 						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \n    \"user\": {\n        \"email\": \"luutrunghieubl@gmail.com\",\n        \"password\": \"Ip123456!\",\n        \"password_confirmation\": \"Ip123456!\",\n        \"first_name\": \"Hieu\",\n        \"last_name\": \"Luu\"\n    }\n}"
+					"raw": "{  \n    \"user\": {\n        \"email\": \"luutrunghieubl@gmail.com\",\n        \"password\": \"Ip123456!\",\n        \"password_confirmation\": \"Ip123456!\",\n        \"name\": \"Riki\"\n    }\n}"
 				},
 				"url": {
 					"raw": "localhost:3000/users",
@@ -62,6 +67,40 @@
 					]
 				},
 				"description": "/users/sign_up(.:format)   <===>                                                                 registrations#new"
+			},
+			"response": []
+		},
+		{
+			"name": "devise sign_in (session) ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"user\": {\n        \"email\": \"luutrunghieubl@gmail.com\",\n        \"password\": \"Ip123456!\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/users/sign_in",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"sign_in"
+					]
+				},
+				"description": "POST   /users/sign_in(.:format)      <===>                                                                devise/sessions#create"
 			},
 			"response": []
 		}
