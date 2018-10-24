@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "04b95005-e6df-4718-a593-902e391aae29",
+		"name": "rails_devise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "sign_up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"user\": {\n        \"email\": \"luutrunghieubl@gmail.com\",\n        \"password\": \"Ip123456!\",\n        \"password_confirmation\": \"Ip123456!\",\n        \"first_name\": \"Hieu\",\n        \"last_name\": \"Luu\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				},
+				"description": "POST   /users(.:format)    <===>                                                                        registrations#create"
+			},
+			"response": []
+		},
+		{
+			"name": "new",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \n    \"user\": {\n        \"email\": \"luutrunghieubl@gmail.com\",\n        \"password\": \"Ip123456!\",\n        \"password_confirmation\": \"Ip123456!\",\n        \"first_name\": \"hieu\",\n        \"last_name\": \"luu\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000//users/sign_up",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"",
+						"users",
+						"sign_up"
+					]
+				},
+				"description": "/users/sign_up(.:format)   <===>                                                                 registrations#new"
+			},
+			"response": []
+		}
+	]
+}

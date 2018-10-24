@@ -1,4 +1,23 @@
 class RegistrationsController < Devise::RegistrationsController
+  respond_to :json
+  def new
+    super
+    # render json: {
+    #     status: 'SUCCESS',
+    #     message: "New message from RegistrationsController",
+    #     data: "Riki add data here"
+    # }, status: :ok
+  end
+
+  def create
+    super
+    # render json: {
+    #     status: 'SUCCESS',
+    #     message: "create message",
+    #     data: "Riki add data here"
+    # }, status: :ok
+  end
+
   private
 
   def sign_up_params
