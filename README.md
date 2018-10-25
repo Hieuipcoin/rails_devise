@@ -18,3 +18,7 @@ commands:
 - bundle install
 - touch .env
 
+**** use gem devise-jwt ****
+- bundle install
+- rails g model JWTBlacklist
+- rake secret

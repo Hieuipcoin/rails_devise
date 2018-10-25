@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # use devise for user authentication
 gem 'devise'
+gem 'devise-jwt'
 
 
 group :development, :test do
