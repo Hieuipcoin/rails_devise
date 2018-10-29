@@ -3,7 +3,7 @@ require 'authenticatable/authenticatable'
 
 class SessionsController < Devise::SessionsController
   respond_to :json
-  LIMIT_UPDATE_TIME = 10 # 10 seconds
+  LIMIT_UPDATE_TIME = 2 # 1 seconds
 
   # POST /users/sign_in
   def create
@@ -16,7 +16,7 @@ class SessionsController < Devise::SessionsController
     # set refresh token to nil if can't update database
     start_second = Time.now
     loop do
-      if self.resource.update_attributes(refresh_token1: refresh_token)
+      if self.resource.update_attributes(refresh_token: refresh_token)
           break
       elsif (Time.now - start_second) >= LIMIT_UPDATE_TIME
         refresh_token = nil
@@ -26,7 +26,7 @@ class SessionsController < Devise::SessionsController
     end
 
     # attach refresh token to respond header and body
-    response.headers['refesh_token'] = refresh_token
+    response.headers['refesh_token'] = "Bearer #{refresh_token}"
   end
 
   private
